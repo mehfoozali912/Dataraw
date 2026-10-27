@@ -85,6 +85,20 @@ early, "reply if you cannot attend" line, signature.
 **Each event morning:** open the file, stand on that day's tab, Alt+F8 → SendForReal.
 (Optional: same thing for exhibitors with that day's stand run-sheet.)
 
+**Deferred-delivery gotcha:** when classic Outlook restarts, queued deferred emails can lose
+their send registration (Outbox "Sent" column shows "None") and will silently never leave.
+Fix/prevention: every show morning run FlushDueReminders (FlushReminders.bas) - it sends
+anything overdue immediately and re-registers future batches with timers intact.
+
+## WhatsApp channel (click-to-send)
+
+Build a workbook from the Master Schedule: tabs per day + full itinerary, one row per VIP with
+phone, message preview, and a https://wa.me/<digits>?text=<url-encoded> SEND hyperlink.
+Rules learned: NO emojis in the URLs (they corrupt to �); WhatsApp bold = *text*; clean phones to
+digits-only with country code; first click needs browser "Always allow" then it goes straight
+to WhatsApp Desktop; never use unofficial bulk-sender tools (number bans). True one-click bulk
+requires WhatsApp Business API (Twilio/Wati/360dialog, pre-approved templates, days of setup).
+
 ## Standing conventions
 - Signature (2026 events): Mehfooz Ali · VIP & Hosted Buyer Manager · <Event> — B2B
   Matchmaking Team · +971 522136124
